@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import Button from '../ui/routerlinks'
 import { FiAlertCircle } from "react-icons/fi";
 import { IoTriangleSharp } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
 const Banner = () => {
     const [ishover, setishover] = useState(false)
     return (
-        <div className='text-center  bg-[#EAEEFF] mt-[55px] pb-[40px]  relative ' >
+        <div className='text-center  bg-[#EAEEFF] mt-[55px] py-[10px]  relative ' >
 
             <div className="absolute bg-[#e5e7f3] hidden lg:block rounded-full w-[30px] h-[30px] top-[45%] left-[20%]"></div>
             <div className="absolute bg-[#e5e7f3] hidden lg:block rounded-full w-[100px] h-[100px] top-[50%] left-[10%]"></div>
@@ -18,8 +19,8 @@ const Banner = () => {
                     <h1>India’s <span className='font-semibold' >Largest</span>  Job Portal</h1>
                 </div>
                 <p className='mt-4 text-xl text-center' >WorkIndia helps you hire staff in 2 days</p>
-                <div className="relative w-full h-full mx-auto mt-6 lg:w-7/12 lg:h-[25rem]">
-                    <img src="http://resources.workindia.in/employer/assets/img/landing_hero.png" className='object-contain w-full h-full lg:object-cover aspect-video' alt="" />
+                <div className="relative w-full h-full mx-auto mt-6 lg:w-7/12 lg:h-[20rem]">
+                    <img src="http://resources.workindia.in/employer/assets/img/landing_hero.png" className='object-contain w-full h-full aspect-video' alt="" />
                 </div>
                 <div className="relative flex w-full mx-auto mt-6 lg:w-5/12 ">
 
@@ -53,17 +54,20 @@ const Banner = () => {
                                     select job title
                                 </div>
                                 <div className="relative inline-block w-full">
-                                    <input type="text" className='h-[40px] text-[14px] text-[#333] w-full bg-white shadow-[inset 0 1px 1px rgba(0,0,0,.075)]px-[12px] py-[6px] rounded-[4px] border border-[#ccc]' />
+                                    <input type="text" className='h-[40px] text-[14px] text-[#333] w-full bg-white shadow-[inset 0 1px 1px rgba(0,0,0,.075)]  px-[12px] py-[6px] rounded-[4px] border border-[#ccc]' placeholder='Ex.Bank office job' />
                                 </div>
                             </div>
                             <div className="flex-1 mr-[20px]">
                                 <div className="font-medium capitalize text-start mb-1.5">
-                                    select job title
+                                    select city
                                 </div>
                                 <div className="relative inline-block w-full">
-                                    <input type="text" className='h-[40px] text-[14px] text-[#333] w-full bg-white shadow-[inset 0 1px 1px rgba(0,0,0,.075)]px-[12px] py-[6px] rounded-[4px] border border-[#ccc]' />
+                                    <input type="text" className='h-[40px] text-[14px] text-[#333] w-full bg-white shadow-[inset 0 1px 1px rgba(0,0,0,.075)]  px-[12px] py-[6px] rounded-[4px] border border-[#ccc]' placeholder='Ex.Surat' />
                                 </div>
                             </div>
+                            <button className='w-10 h-10 mt-[28px] flex text-white items-center justify-center rounded bg-[#4154AF]'>
+                                <FaSearch />
+                            </button>
                         </div>
                     </div>
                 </div>
