@@ -1,8 +1,11 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import Button from '../ui/routerlinks'
+import { FiAlertCircle } from "react-icons/fi";
+import { IoTriangleSharp } from "react-icons/io5";
 const Banner = () => {
+    const [ishover, setishover] = useState(false)
     return (
-        <div className='text-center  bg-[#EAEEFF] mt-[55px] pt-[40px] pb-[10rem] relative ' >
+        <div className='text-center  bg-[#EAEEFF] mt-[55px] pb-[40px]  relative ' >
 
             <div className="absolute bg-[#e5e7f3] hidden lg:block rounded-full w-[30px] h-[30px] top-[45%] left-[20%]"></div>
             <div className="absolute bg-[#e5e7f3] hidden lg:block rounded-full w-[100px] h-[100px] top-[50%] left-[10%]"></div>
@@ -19,15 +22,52 @@ const Banner = () => {
                     <img src="http://resources.workindia.in/employer/assets/img/landing_hero.png" className='object-contain w-full h-full lg:object-cover aspect-video' alt="" />
                 </div>
                 <div className="relative flex w-full mx-auto mt-6 lg:w-5/12 ">
-                    <button className='h-[45px] overflow-hidden text-[18px] text-white bg-transparent w-5/12 mx-[30px] rounded-lg capitalize z-1 relative  before:left-[-150px] before:hover:left-0 before:z-0  before:top-0 border-2 before:transition-all before:duration-1000 before:ease-out border-[#2f51b5] before:absolute before:w-[150px] before:h-[45px] before:bg-[#2f51b5] before:block after:right-[-150px] after:hover:right-0 after:z-0  after:top-0 border-2 after:transition-all after:duration-1000 after:ease-out after:absolute after:w-[150px] after:h-[45px] after:bg-[#2f51b5] after:block group' >
-                        <p className='relative text-black group-hover:z-10 group-hover:text-white' >hire now</p>
-                    </button>
-                    <button className='h-[45px] overflow-hidden text-[18px] text-white bg-transparent w-5/12 mx-[30px] rounded-lg capitalize  before:left-[-150px] before:hover:left-0 before:z-0  before:top-0 border-2 before:transition-all before:duration-1000 before:ease-out border-[#2f51b5] z-1 relative before:absolute before:w-[150px] before:h-[45px] before:bg-[#2f51b5] before:block after:right-[-150px] after:hover:right-0 after:z-0  after:top-0 border-2 after:transition-all after:duration-1000 after:ease-out after:absolute after:w-[150px] after:h-[45px] after:bg-[#2f51b5] after:block group' >
-                        <p className='relative text-black group-hover:z-10 group-hover:text-white' >get a job</p>
-                    </button>
+
+                    <Button label='hire now' to='/hire' />
+                    <Button label='get a job' to='jobs' />
                 </div>
             </div>
             <div className="absolute w-3/12 right-0 top-[55px] "></div>
+            <div className="relative w-full mx-auto pt-[50px]">
+                <div className="w-full mx-auto lg:w-7/12">
+                    <div className="shadow-[0 4px 30px rgba(65,84,175,.13)] rounded-[12px]  bg-white px-[28px] py-[18px] w-full">
+                        <div className="flex items-center space-x-2">
+                            <span className='mt-1 mb-3 text-2xl text-[rgb(88,88,88)]' >Search candidate database</span>
+                            <div className="-mt-1">
+                                <div className="flex relative items-center justify-center w-5 h-5 rounded-full cursor-pointer text-[#4154AF]">
+                                    <FiAlertCircle onMouseEnter={() => setishover(true)} onMouseLeave={() => setishover(false)} />
+                                    {ishover && (
+                                        <div className="absolute w-[150px] h-[50px] overflow-hidden text-start px-2 py-1 top-[-45px] left-[61%] rounded-tl-lg rounded-br-lg shadow-lg bg-white">
+                                            <IoTriangleSharp className=' absolute bottom-[-8px] left-[-8px] text-[20px] text-white rotate-[224deg]'
+                                            />
+                                            <span className="text-black text-[10px]">Hovered!</span>
+
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-start w-full lg:flex-row">
+                            <div className="flex-1 mr-[20px]">
+                                <div className="font-medium capitalize text-start mb-1.5">
+                                    select job title
+                                </div>
+                                <div className="relative inline-block w-full">
+                                    <input type="text" className='h-[40px] text-[14px] text-[#333] w-full bg-white shadow-[inset 0 1px 1px rgba(0,0,0,.075)]px-[12px] py-[6px] rounded-[4px] border border-[#ccc]' />
+                                </div>
+                            </div>
+                            <div className="flex-1 mr-[20px]">
+                                <div className="font-medium capitalize text-start mb-1.5">
+                                    select job title
+                                </div>
+                                <div className="relative inline-block w-full">
+                                    <input type="text" className='h-[40px] text-[14px] text-[#333] w-full bg-white shadow-[inset 0 1px 1px rgba(0,0,0,.075)]px-[12px] py-[6px] rounded-[4px] border border-[#ccc]' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
