@@ -16,3 +16,8 @@ code {
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities{
+  #root{
+    overflow-x:hidden;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
+import { FaUserAlt } from "react-icons/fa";
 const Header = () => {
     const [isopenmenu, setisopenmenu] = useState(false);
 
@@ -25,16 +26,16 @@ const Header = () => {
         setisopenmenu(!isopenmenu);
     }
     const links = [
-        { id: 1, labal: "apply now", path: "/aboutpage" },
-        { id: 2, labal: "hire now", path: "/service" },
-        { id: 3, labal: "login", path: "/ourwork" },
+        // { id: 1, labal: "apply now", path: "/aboutpage" },
+        // { id: 2, labal: "hire now", path: "/service" },
+        { id: 3, labal: (<><FaUserAlt />  Login</>), path: "/login" },
 
     ]
 
     return (
         <>
             <div
-                className={`fixed top-0 hidden lg:flex left-0 w-full h-auto  z-[99] px-[3vw] transition-all duration-300  '}`}
+                className={`fixed top-0 hidden shadow-md lg:flex left-0 w-full h-auto  z-[99] px-[3vw] transition-all duration-300 bg-white '}`}
             >
                 <div className="w-full">
                     <div className="relative flex items-center justify-between z-[5]">
@@ -47,12 +48,12 @@ const Header = () => {
 
                                     return (
                                         <li className="relative " key={id}>
-                                            <a
-                                                className={` 4xl:text-[20px]  xl:text-[14px] capitalize duration-1000 px-[15px] py-[7px] border border-[#212529] cursor-pointer rounded-md hover:bg-[#212529] hover:text-white  `}
+                                            <Link
+                                                className={` h-[40px] w-[100px]  leading-0 flex items-center justify-center border-2 border-[#2f51b5] rounded-lg text-[#2f51b5] hover:bg-[#2f51b5] duration-1000 hover:text-white `}
                                                 to={link.path}
                                             >
                                                 {link.labal}
-                                            </a>
+                                            </Link>
                                         </li>
                                     );
                                 })}
